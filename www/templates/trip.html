@@ -1,0 +1,21 @@
+<ion-view view-title="In Transit">
+  <ion-content class="bus-content">
+    <div class="row">
+      <div class="col absolute-center">
+        <h1 class="title"> We will give a reminder<br>
+          before your destination</h1>
+      </div>
+    </div>
+  </ion-content>
+  <div ng-if="!reminder" class="bar bar-footer bar-balanced">
+    <div class="title " ng-click="toggleReminder()">
+      {{reminderBtn}}
+    </div>
+  </div>
+  <div ng-if="reminder" class="bar bar-footer bar-assertive">
+    <div class="title" ng-click="toggleReminder()">
+      {{reminderBtn}}
+    </div>
+  </div>
+
+</ion-view>

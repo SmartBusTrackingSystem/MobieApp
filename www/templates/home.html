@@ -1,0 +1,28 @@
+<ion-view view-title="Home">
+  <ion-content class="search-content">
+    <div class="row">
+      <div class="col text-center">
+        <div class="list" ng-controller="HomeCtrl">
+          <div class="item item-input item-floating-label">
+            <input type="text" ng-model="source" googleplacesauto placeholder="Enter source" ng-change="disableTap()"/>
+            <p>OR</p>
+            <button class="button icon-left ion-location" ng-model="getLocationButton" ng-click="getCurrentLocation()">
+              Use Current Location
+            </button>
+          </div>
+
+          <div class="item item-input">
+            <input type="text" ng-model="destination" googleplacesauto placeholder="Enter Destination" ng-change="disableTap()"/>
+          </div>
+
+          <div class="button button-block button-positive"
+               ng-model="getRouteButton"
+               ng-disabled="!source||!destination"
+               ng-click="getBuses()" ng-navigation="enter">
+            Get Route
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

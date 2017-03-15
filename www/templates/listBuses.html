@@ -1,0 +1,23 @@
+<ion-view view-title="List of next buses">
+  <ion-content class="search-result">
+    <div class="row" ng-controller="ListBusesCtrl">
+      <div class="col text-center">
+        <ion-list>
+          <div ng-repeat="bus in buses"
+               class="card col responsive-lg responsive-md responsive-sm content-left">
+            <div class="item item-text-wrap">
+              <a ui-sref="busSchedule({id:bus._id})" nav-direction="enter" class="no-underline">
+                <div class="title">{{bus.route_id}}</div>
+                <span class="badge badge-positive"> In &nbsp;{{Math.ceil(((bus.distance/1609.344)/bus.speed)*60)}} mins</span>
+                <h3 class="item-content margin-from-top"> {{getRouteInfo(bus.route_id).source.name}}</h3>
+                <div class="button-positive margin-from-top">
+                  Vacant seats: {{bus.bus_total[0]-bus.occupied_seats}}
+                </div>
+              </a>
+            </div>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

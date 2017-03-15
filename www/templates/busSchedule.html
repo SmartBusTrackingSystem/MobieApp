@@ -1,0 +1,41 @@
+<ion-view view-title="Detailed instructions">
+  <ion-content class="bus-content">
+    <div class="col row">
+      <div class="col row float-right">
+        <a ui-sref="map({id:bus._id})" nav-direction="enter" class="button button-balanced no-underline ">
+          Map view
+        </a>
+      </div>
+      <div class="col row margin-from-top">
+        <div class="list card">
+
+          <div class="card">
+            <div class="item item-divider">
+              {{
+              source
+              }}
+            </div>
+            <div ng-repeat="step in busRoute.steps" >
+            <div class="item item-text-wrap">
+              {{
+                step.html_instructions;
+              }}
+            </div>
+              <div class="item item-divider">
+                {{
+                step.end_formatted_address;
+                }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer bar-balanced">
+    <a ui-sref="trip({id:bus._id})" nav-direction="enter">
+    <div class="title button button-balanced">Start Trip</div>
+    </a>
+  </div>
+</ion-view>
